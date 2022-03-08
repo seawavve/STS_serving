@@ -3,21 +3,25 @@ from fastapi import UploadFile
 from fastapi import File
 
 from pydantic import BaseModel
+import requests
 
 app = FastAPI()
+db=dict()
 
 class Item(BaseModel):
     sentence_1: str
     sentence_2: str
 
 @app.get("/")
-async def root():
-    return {"message": "Hello World"}
+async def show_2sent():
+    sents=db
+    return sents
 
 @app.post("/items/")
 def get_text(item:Item):
     item_dict = item.dict()
-    print(item_dict)
+    db = item_dict
+    print(db)
     # get 2 line text
     # image = np.array(Image.open(file.file))
     # model = config.STYLES[style]
