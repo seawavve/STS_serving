@@ -47,18 +47,17 @@ def get_length(sent1,sent2):
 @app.post("/items/")
 async def get_json(item:Item):
     start = time.time()
-    p=Pool()
+    p=Pool() # 비어 있을 시, cpu_count()가 인자로 들어감
     db = item.dict()
     
     length = len(db['sentence_1']) + len(db['sentence_2'])
-    ret1 = 1
-    ret2 = 2
-    ret1 = p.apply(get_length,(db['sentence_1'],db['sentence_2'],))
-    ret2 = p.apply(get_length,(db['sentence_1'],db['sentence_1'],))
+    ret1 = p.apply_async(get_length,(db['sentence_1'],db['sentence_2'],))
+    ret2 = p.apply_async(get_length,(db['sentence_1'],db['sentence_1'],))
     
     
     end = time.time()
     runtime = end - start
     p.close()
     p.join()
-    return {'length_result':length, 'runtime(sec)':runtime,'ret1': ret1, 'ret2':ret2}
+    return {'length_result':length, 'runtime(sec)':runtime,'ret1': ret1.get(), 'ret2':ret2.get()}
+
