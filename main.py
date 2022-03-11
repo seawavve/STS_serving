@@ -1,3 +1,5 @@
+# uvicorn main:app --reload
+
 from fastapi import FastAPI
 from fastapi import UploadFile
 from fastapi import File
@@ -5,7 +7,6 @@ import torch
 import time
 from pydantic import BaseModel
 from multiprocessing import Pool
-from fastapi.encoders import jsonable_encoder
 from fastapi import FastAPI, File, UploadFile
 import json
 
@@ -22,19 +23,8 @@ class Item(BaseModel):
 #     sents = db
 #     return sents
 
-# @app.get("/predict")
-# async def predict(db):
-#     PATH = 'model_tutorial.pt'
-#     model = torch.load(PATH)
-#     model.eval()
-#     logits = model(db.values())
-#     return logits
-# #     model = 'model_tutorial.pt'
-# #     predict_result = inference.inference(model,db.values())
-# #     return {'sentences':db,'predict_result':predict_result}
 
-
-@app.post("/item/")
+@app.post("/items/")
 async def get_text(item:Item):
     start = time.time()
     db = item.dict()
@@ -45,6 +35,15 @@ async def get_text(item:Item):
 
 def get_length(sent1,sent2):
     return len(sent1) + len(sent2)
+
+# def set_device():
+#     if torch.cuda.is_available():
+#         device = torch.device("cuda")
+#         print(f"# available GPUs : {torch.cuda.device_count()}")
+#         print(f"GPU name : {torch.cuda.get_device_name()}")
+#     else:
+#         device = torch.device("cpu")
+#     return(device)
 
 @app.post("/files/")
 async def get_json(file: bytes = File(...)):
@@ -60,4 +59,16 @@ async def get_json(file: bytes = File(...)):
     p.close()
     p.join()
     return {'runtime(sec)':runtime, 'json_contents': json_data, 'ret1': ret1.get(), 'ret2':ret2.get()}
+
+@app.post("/predicts")
+async def predict(file: bytes = File(...)):
+    device = torch.device("cpu")
+    PATH = 'model_tutorial.pt'
+    model = torch.load(PATH,map_location=torch.device('cpu'))
+    # model.eval()
+    # logits = model(db.values())
+    return {}
+#     model = 'model_tutorial.pt'
+#     predict_result = inference.inference(model,db.values())
+#     return {'sentences':db,'predict_result':predict_result}
 
