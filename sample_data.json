@@ -1,0 +1,15 @@
+{
+    "results": [
+        {  
+     
+            "idx": 1,
+            "sentence1": "Are you hungry?",
+            "sentence2": "Yes. I'm hungry."
+        },
+        {   
+            "idx": 2,
+            "sentence1": "Don't you know I'm a savage?",
+            "sentence2": "I'm a killer"
+        }        
+    ]
+}
