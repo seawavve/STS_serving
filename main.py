@@ -9,6 +9,7 @@ from pydantic import BaseModel
 from multiprocessing import Pool
 from fastapi import FastAPI, File, UploadFile
 import json
+from content import get_length
 
 app = FastAPI()
 db = dict()
@@ -17,33 +18,16 @@ class Item(BaseModel):
     sentence_1: str
     sentence_2: str
 
-# @app.get("/")
-# async def show_2sent():
-    
-#     sents = db
-#     return sents
-
 
 @app.post("/items/")
 async def get_text(item:Item):
     start = time.time()
     db = item.dict()
-    length = len(db['sentence_1']) + len(db['sentence_2'])
+    # length = len(db['sentence_1']) + len(db['sentence_2'])
+    length = get_length(db['sentence_1'],db['sentence_2'])
     end = time.time()
     runtime = end - start
     return {'length_result':length, 'runtime(sec)':runtime}
-
-def get_length(sent1,sent2):
-    return len(sent1) + len(sent2)
-
-# def set_device():
-#     if torch.cuda.is_available():
-#         device = torch.device("cuda")
-#         print(f"# available GPUs : {torch.cuda.device_count()}")
-#         print(f"GPU name : {torch.cuda.get_device_name()}")
-#     else:
-#         device = torch.device("cpu")
-#     return(device)
 
 @app.post("/files/")
 async def get_json(file: bytes = File(...)):
@@ -65,10 +49,5 @@ async def predict(file: bytes = File(...)):
     device = torch.device("cpu")
     PATH = 'model_tutorial.pt'
     model = torch.load(PATH,map_location=torch.device('cpu'))
-    # model.eval()
-    # logits = model(db.values())
     return {}
-#     model = 'model_tutorial.pt'
-#     predict_result = inference.inference(model,db.values())
-#     return {'sentences':db,'predict_result':predict_result}
 
