@@ -23,7 +23,6 @@ class Item(BaseModel):
 async def get_text(item:Item):
     start = time.time()
     db = item.dict()
-    # length = len(db['sentence_1']) + len(db['sentence_2'])
     length = get_length(db['sentence_1'],db['sentence_2'])
     end = time.time()
     runtime = end - start
