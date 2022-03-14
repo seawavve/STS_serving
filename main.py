@@ -9,7 +9,7 @@ from pydantic import BaseModel
 from multiprocessing import Pool
 from fastapi import FastAPI, File, UploadFile
 import json
-from content import get_length
+from content import get_length, predict_model
 
 app = FastAPI()
 db = dict()
@@ -45,8 +45,6 @@ async def get_json(file: bytes = File(...)):
 
 @app.post("/predicts")
 async def predict(file: bytes = File(...)):
-    device = torch.device("cpu")
-    PATH = 'model_tutorial.pt'
-    model = torch.load(PATH,map_location=torch.device('cpu'))
+    predict_model()
     return {}
 
