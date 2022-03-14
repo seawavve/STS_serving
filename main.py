@@ -35,7 +35,7 @@ async def get_json(file: bytes = File(...)):
     json_data = json.loads(file)
     json_data = json_data['results']
     ret1 = p.apply_async(get_length,(json_data[0]['sentence1'], json_data[0]['sentence2'],))
-    ret2 = p.apply_async(get_length,(json_data[1]['sentence1'], json_data[1]['sentence1'],))
+    ret2 = p.apply_async(get_length,(json_data[1]['sentence1'], json_data[1]['sentence2'],))
     
     end = time.time()
     runtime = end - start

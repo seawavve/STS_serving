@@ -3,13 +3,58 @@
         {  
      
             "idx": 1,
-            "sentence1": "Are you hungry?",
-            "sentence2": "Yes. I'm hungry."
+            "sentence1": "원티드 프리온보딩 코스를 시작했습니다.",
+            "sentence2": "마침내 코스를 수료했습니다."
         },
         {   
             "idx": 2,
-            "sentence1": "Don't you know I'm a savage?",
-            "sentence2": "I'm a killer"
-        }        
+            "sentence1": "출석체크 다들 몇 시에 하셨나요?",
+            "sentence2": "오늘 과제는 언제까지 인가요?"
+        },
+        {   
+            "idx": 3,
+            "sentence1": "또 의견 주실 수 있나요?",
+            "sentence2": "오늘 회의는 이만 하겠습니다."
+        },
+        {   
+            "idx": 4,
+            "sentence1": "질문 있습니다.",
+            "sentence2": "손들기 하고 말씀해주세요."
+        },
+        {   
+            "idx": 5,
+            "sentence1": "그 의견 좋은거 같아요.",
+            "sentence2": "저도 그 의견 좋습니다."
+        },
+        {   
+            "idx": 6,
+            "sentence1": "안녕하세요",
+            "sentence2": "오늘 과제 난이도 어떠셨나요?"
+        },
+        {   
+            "idx": 7,
+            "sentence1": "과제 3번 데이터 전처리는 이렇게 하면 되겠네요.",
+            "sentence2": "4번 데이터 전처리에도 적용하면 좋겠습니다."
+        },
+        {   
+            "idx": 8,
+            "sentence1": "오늘 아파서 참석하기 힘듭니다.",
+            "sentence2": "건강하세요."
+        },
+        {   
+            "idx": 9,
+            "sentence1": "오늘 라이스 세션 있나요?",
+            "sentence2": "구글 캘린더 확인 부탁드립니다."
+        },
+        {   
+            "idx": 10,
+            "sentence1": "지금까지 pytorch 및 NLP 모델을 공부하고 자신의 것으로 만드느라 정말 수고하셨습니다. ",
+            "sentence2": "이번주부터는 지금까지 배운 지식들을 마음껏 써먹을 수 있는 실전 시간입니다."
+        },
+        {   
+            "idx": 11,
+            "sentence1": "오늘 과제는 코딩 과제입니다.",
+            "sentence2": "오늘 과제는 논문 리딩 과제입니다."
+        }                                              
     ]
 }
