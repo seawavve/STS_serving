@@ -43,8 +43,8 @@ async def get_json(file: bytes = File(...)):
     p.join()
     return {'runtime(sec)':runtime, 'json_contents': json_data, 'ret1': ret1.get(), 'ret2':ret2.get()}
 
-@app.post("/predicts")
-async def predict(file: bytes = File(...)):
-    predict_model()
-    return {}
+# @app.post("/predicts")
+# async def predict(file: bytes = File(...)):
+#     predict_model()
+#     return {}
 
