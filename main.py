@@ -45,6 +45,7 @@ async def get_json(file: bytes = File(...)):
 
 @app.post("/predicts")
 async def predict(item:Item):
-    predict_model()
-    return {}
+    texts = item.dict() 
+    pred = predict_model(texts['sentence_1'],texts['sentence_2'])
+    return {'pred':pred}
 

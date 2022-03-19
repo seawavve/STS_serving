@@ -11,10 +11,11 @@ def cosine_similarity_manual(x, y, small_number=1e-8):
   result =  torch.dot(x, y) / (torch.linalg.norm(x) * torch.linalg.norm(y) + small_number)
   return result
 
-def predict_model():
-    sent1 = '무엇보다도 호스트분들이 너무 친절하셨습니다.'
-    sent2 = '무엇보다도, 호스트들은 매우 친절했습니다.'
-    predict = 0
+def predict_model(sent1,sent2):
+    # sent1 = '무엇보다도 호스트분들이 너무 친절하셨습니다.'
+    # sent2 = '무엇보다도, 호스트들은 매우 친절했습니다.'
+    # predict = 0
+    
     # device = torch.device("cpu")
     # PATH = 'model_tutorial.pt'
     # model = torch.load(PATH,map_location=torch.device('cpu'))
@@ -35,6 +36,6 @@ def predict_model():
     else:
         pred = 0
 
-    print(pred)
+    # print(pred)
     
     
