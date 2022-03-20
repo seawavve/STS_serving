@@ -32,7 +32,7 @@ main.py로 두 문장을 넣어 predict_sentences를 실행한 결과입니다. 
 
 
 ## Code Description
-`main.py`는 총 세 가지 비동기 기능을 제공합니다. 가장 기본적인 STS Model Serving 기능은 predict_json입니다. 평귱 1.5초 소요됩니다. 대용량 데이터 처리를 위한 기능은 predict_json_multiprocessing과 predict_sentences입니다. 대용량 데이터를 inference 하는데에 효율적으로 처리하기 위해서 여러 프로세스를 병렬적으로 사용하는 멀티프로세싱 기능을 지원합니다. 일정 데이터 개수 이하의 데이터를 처리한다면 오버헤드 문제로 싱글프로세싱을 사용하는게 더 시간이 적게 드는 Case도 고려하여 predict_json을 개발했습니다. 데이터 양에 따라 나누어서 사용하시면 됩니다. json_data 형식은 sample_data.json 파일을 참고하세요.  
+`main.py`는 총 세 가지 비동기 기능을 제공합니다. 가장 기본적인 STS Model Serving 기능은 predict_json입니다. 평귱 1.3초 소요됩니다. 대용량 데이터 처리를 위한 기능은 predict_json_multiprocessing과 predict_sentences입니다. 대용량 데이터를 inference 하는데에 효율적으로 처리하기 위해서 여러 프로세스를 병렬적으로 사용하는 멀티프로세싱 기능을 지원합니다. 일정 데이터 개수 이하의 데이터를 처리한다면 오버헤드 문제로 싱글프로세싱을 사용하는게 더 시간이 적게 드는 Case도 고려하여 predict_json을 개발했습니다. 데이터 양에 따라 나누어서 사용하시면 됩니다. json_data 형식은 sample_data.json 파일을 참고하세요.  
 - predict_sentences  
   하나의 문장쌍을 입력받아 Inference 값을 반환하는 기능  
 - predict_json_multiprocessing  
