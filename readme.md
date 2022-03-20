@@ -8,6 +8,8 @@ Model을 서빙하기위해 Python 기반 백앤드 프레임워크를 고민했
 ```
 conda create -n sts-serving python=3.8
 conda activate sts-serving
+conda install --file requirements.txt
+conda install -c powerai sentencepiece
 ```
 
 ``` 
