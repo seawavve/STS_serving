@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ```
 uvicorn main:app --reload
 ```
-FastAPI Code를 실행합니다. `http://127.0.0.1:8000/docs#/` 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.  
+FastAPI Code를 실행합니다. `http://127.0.0.1:8000/docs#/` URL 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.  
 
 
 
