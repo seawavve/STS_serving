@@ -25,7 +25,7 @@ uvicorn main:app --reload
 ```
 FastAPI Code를 실행합니다. `http://127.0.0.1:8000/docs#/` URL 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.  
 
-### Execution Result
+## Execution Result
 main.py로 두 문장을 넣어 predict_sentences를 실행한 결과입니다. 변수로 주어진 문장(sentence),두 문장의 코사인 유사도 실수값(score), binary 유사도 값(pred), 코드 런타임(runtime)입니다.
 ![execution_result](https://github.com/seawavve/STS_serving/blob/master/execution_result.png)
 
