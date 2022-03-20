@@ -24,8 +24,9 @@ FastAPI 프레임워크를 사용하여 sentence-klue-roberta-base 모델을 서
 git clone https://github.com/seawavve/STS_serving
 cd STS_serving
 pip install -r requirements.txt
+unzip training_sts-Huffon-sentence-klue-roberta-base-2022-03-16_16-35-50.zip
 ```
-본 Repository를 clone하여 로컬에 생성합니다. 폴더에 들어가 requirements.txt 파일을 읽어 환경을 세팅합니다.  
+본 Repository를 clone하여 로컬에 생성합니다. 폴더에 들어가 requirements.txt 파일을 읽어 환경을 설정합니다. 모델 파일 압축을 해제하여 사용할 모델을 세팅합니다.
 
 모델 파일 주소 ##########  
 위 주소에서 모델 파일을 다운받아 Repository내에 추가합니다.  
