@@ -11,13 +11,14 @@ conda activate sts-serving
 conda install --file requirements.txt
 conda install -c powerai sentencepiece
 ```
+conda로 가상환경을 설정합니다. requirements.txt 파일을 읽어 sts-serving conda 환경을 설정합니다.
 
 ``` 
 git clone https://github.com/seawavve/STS_serving
 cd STS_serving
 unzip training_sts-Huffon-sentence-klue-roberta-base-2022-03-16_16-35-50.zip
 ```
-본 Repository를 clone하여 로컬에 생성합니다. 폴더에 들어가 requirements.txt 파일을 읽어 환경을 설정합니다. 모델 파일 압축을 해제하여 사용할 모델을 세팅합니다.
+본 Repository를 clone하여 로컬에 생성합니다. 폴더에 들어가 모델 파일 압축을 해제하여 사용할 모델을 세팅합니다.
 
 ```
 uvicorn main:app --reload
