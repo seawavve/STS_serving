@@ -2,7 +2,7 @@
 -----
 FastAPI 프레임워크를 사용하여 sentence-klue-roberta-base 모델을 서빙했습니다. 본 모델은 두 문장의 유사도를 반환하는 STS(Sentence Textual Similarity) Task 모델입니다. 두 문장이 들어오면 이를 RestAPI POST로 받아와 inference 결과를 반환합니다. 위 코드는 모듈화 되어 있습니다.
 
-# Code Description
+## Code Description
 `main.py`는 총 세 가지 기능을 제공합니다.
 - predict_sentences
   하나의 문장쌍을 입력받아 Inference 값을 반환하는 기능
@@ -18,4 +18,4 @@ FastAPI 프레임워크를 사용하여 sentence-klue-roberta-base 모델을 서
 - 
 
 
-# How to Run
+## How to Run
