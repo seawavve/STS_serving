@@ -19,6 +19,17 @@ class Item(BaseModel):
     sentence_1: str
     sentence_2: str
 
+@app.post("/pred/sentences")
+async def predict_sentences(item:Item):
+    start = time.time()
+    texts = item.dict()
+    sent1 = texts['sentence_1']
+    sent2 = texts['sentence_2']
+    score,pred = predict_model(sent1,sent2)
+    end = time.time()
+    runtime = end - start
+    return {'sentence_1':sent1, 'sentence_2':sent2, 'score':score, 'pred':pred, 'runtime(sec)':runtime}
+
 @app.post("/pred/file/")
 async def predict_json(file: bytes = File(...)):
     start = time.time()
@@ -79,15 +90,4 @@ async def predict_json_multiprocessing(file: bytes = File(...)):
     p.close()
     p.join()
     return {'sentences':sentences,'preds':preds,'scores':scores, 'runtime(sec)':runtime}
-
-@app.post("/pred/sentences")
-async def predict_sentences(item:Item):
-    start = time.time()
-    texts = item.dict() 
-    sent1 = texts['sentence_1']
-    sent2 = texts['sentence_2']
-    score,pred = predict_model(sent1,sent2)
-    end = time.time()
-    runtime = end - start
-    return {'sentence_1':sent1, 'sentence_2':sent2, 'score':score, 'pred':pred, 'runtime(sec)':runtime}
 

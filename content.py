@@ -2,7 +2,7 @@ import torch
 from sentence_transformers.readers import InputExample
 from sentence_transformers import SentenceTransformer
 
-def cosine_similarity_manual(x, y, small_number=1e-8):
+def cosine_similarity(x, y, small_number=1e-8):
   result =  torch.dot(x, y) / (torch.linalg.norm(x) * torch.linalg.norm(y) + small_number)
   return result
 
@@ -13,7 +13,7 @@ def predict_model(sent1,sent2):
     
     corpus_embeddings = model.encode(sts_infer_input.texts[0], convert_to_tensor=True)
     query_embeddings = model.encode(sts_infer_input.texts[1], convert_to_tensor=True)
-    score = cosine_similarity_manual(corpus_embeddings,query_embeddings)
+    score = cosine_similarity(corpus_embeddings,query_embeddings)
 
     if score >= 0.6:
         pred = 1
