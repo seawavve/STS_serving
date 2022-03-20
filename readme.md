@@ -1,5 +1,6 @@
 # STS Model Serving
 FastAPI 프레임워크를 사용하여 sentence-klue-roberta-base 모델을 서빙했습니다. 본 모델은 두 문장의 유사도를 반환하는 STS(Sentence Textual Similarity) Task 모델입니다. 두 문장이 들어오면 이를 RestAPI로 inference 결과를 반환합니다. 위 코드는 모듈화 되어 있습니다.
+Model을 서빙하기위해 Python 기반 백앤드 프레임워크를 고민했습니다. 우수한 공식 문서와 큰 생태계를 갖고 있는 장고 프레임워크와 직관적이고 가벼운 플라스크 프레임워크를 고려했습니다. 고민 끝에 비교적 속도가 빠른 FastAPI 프레임워크를 선택했습니다.
   
 
 
@@ -18,12 +19,13 @@ uvicorn main:app --reload
 FastAPI Code를 실행합니다. `http://127.0.0.1:8000/docs#/` URL 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.  
 
 ### Execution Result
+main.py로 두 문장을 넣어 predict_sentences를 실행한 결과입니다. 변수로 주어진 문장(sentence),두 문장의 코사인 유사도 실수값(score), binary 유사도 값(pred), 코드 런타임(runtime)입니다.
 ![execution_result](https://github.com/seawavve/STS_serving/blob/master/execution_result.png)
 
 
 
 ## Code Description
-`main.py`는 총 세 가지 기능을 제공합니다. 가장 기본적인 STS Model Serving 기능은 predict_json입니다. 대용량 데이터 처리를 위한 기능은 predict_json_multiprocessing과 predict_sentences입니다. 대용량 데이터를 inference 하는데에 효율적으로 처리하기 위해서 여러 프로세스를 병렬적으로 사용하는 멀티프로세싱 기능을 지원합니다. 일정 데이터 개수 이하의 데이터를 처리한다면 오버헤드 문제로 싱글프로세싱을 사용하는게 더 시간이 적게 드는 Case도 고려하여 predict_json을 개발했습니다. 데이터 양에 따라 나누어서 사용하시면 됩니다. json_data 형식은 sample_data.json 파일을 참고하세요.  
+`main.py`는 총 세 가지 비동기 기능을 제공합니다. 가장 기본적인 STS Model Serving 기능은 predict_json입니다. 대용량 데이터 처리를 위한 기능은 predict_json_multiprocessing과 predict_sentences입니다. 대용량 데이터를 inference 하는데에 효율적으로 처리하기 위해서 여러 프로세스를 병렬적으로 사용하는 멀티프로세싱 기능을 지원합니다. 일정 데이터 개수 이하의 데이터를 처리한다면 오버헤드 문제로 싱글프로세싱을 사용하는게 더 시간이 적게 드는 Case도 고려하여 predict_json을 개발했습니다. 데이터 양에 따라 나누어서 사용하시면 됩니다. json_data 형식은 sample_data.json 파일을 참고하세요.  
 - predict_sentences  
   하나의 문장쌍을 입력받아 Inference 값을 반환하는 기능  
 - predict_json_multiprocessing  
