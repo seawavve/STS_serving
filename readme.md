@@ -38,7 +38,28 @@ pip3 install -r requirements.text
 ```
 uvicorn main:app --reload
 ```
-FastAPI Code를 실행합니다. `http://127.0.0.1:8000/docs#/` URL 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.  
+FastAPI Code를 실행합니다.    
+
+4. URL 접속
+`http://127.0.0.1:8000/docs#/` URL 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.
+<img width="592" alt="image" src="https://user-images.githubusercontent.com/66352658/159536641-63cd6e61-4b0c-4766-a8b3-cfbba6ec654a.png">
+
+5. Usage  
+  * predict_sentences (/pred/sentences/)  
+  Try it Out -> "sentence_1": "string"의 "string"에 한국어 문장1 삽입 & "sentence_2": "string"의 "string"에 한국어 문장2 삽입 -> Execute  
+  결과는 Response Body에서 확인할 수 있습니다.  
+  <img width="413" alt="image" src="https://user-images.githubusercontent.com/66352658/159537841-89fbbb9d-be7e-405d-afa6-a80baf649ab7.png">
+
+  * predict_json_multiprocessing (/pred/file/)    
+  Try it Out -> sample_data.json 삽입 -> Execute  
+  결과는 Response Body에서 확인할 수 있습니다.  
+  <img width="409" alt="image" src="https://user-images.githubusercontent.com/66352658/159538459-5116948b-8c2e-4f51-97bf-26c5a39bb193.png">
+  
+  * predict_json (/pred/multi/)  
+  Try it Out -> sample_data.json 삽입 -> Execute  
+  결과는 Response Body에서 확인할 수 있습니다.  
+  <img width="463" alt="image" src="https://user-images.githubusercontent.com/66352658/159538640-534d0597-f2a3-449b-8c54-63485e2a7bc4.png">
+
 
 ## Execution Result
 main.py로 두 문장을 넣어 predict_sentences를 실행한 결과입니다. 변수로 주어진 문장(sentence),두 문장의 코사인 유사도 실수값(score), binary 유사도 값(pred), 코드 런타임(runtime)입니다.
