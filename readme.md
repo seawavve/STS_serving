@@ -19,7 +19,7 @@ conda activate sts-serving
 conda install --file requirements.txt
 conda install -c powerai sentencepiece
 ```
-conda로 가상환경을 설정합니다. requirements.txt 파일을 읽어 sts-serving conda 환경을 설정합니다.
+conda로 가상환경을 설정합니다. requirements.txt 파일을 읽어 sts-serving conda 환경을 설정합니다. 위 방식이 실행되지 않는다면 `pip install -r requirements.text`를 실행해주세요.
 
 
 
