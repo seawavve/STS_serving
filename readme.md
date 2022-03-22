@@ -6,6 +6,7 @@ Model을 서빙하기위해 Python 기반 백앤드 프레임워크를 고민했
 
 ## How to Run(Conda)
 
+1. Repository clone
 ``` 
 git clone https://github.com/seawavve/STS_serving
 cd STS_serving
@@ -13,15 +14,26 @@ unzip training_sts-Huffon-sentence-klue-roberta-base-2022-03-16_16-35-50.zip
 ```
 본 Repository를 clone하여 로컬에 생성합니다. 폴더에 들어가 모델 파일 압축을 해제하여 사용할 모델을 세팅합니다.
 
+2. 환경 생성
+
 ```
 conda create -n sts-serving python=3.8
 conda activate sts-serving
 conda install --file requirements.txt
 conda install -c powerai sentencepiece
 ```
-conda로 가상환경을 설정합니다. requirements.txt 파일을 읽어 sts-serving conda 환경을 설정합니다. 위 방식이 실행되지 않는다면 `pip install -r requirements.text`를 실행해주세요.
+conda로 가상환경을 설정합니다. requirements.txt 파일을 읽어 sts-serving conda 환경을 설정합니다.   
+위 방식이 실행되지 않는다면 아래 코드를 실행해주세요.
 
+```
+pip install -r requirements.text
+```
+or
+```
+pip3 install -r requirements.text
+```
 
+3. Server Code 
 
 ```
 uvicorn main:app --reload
