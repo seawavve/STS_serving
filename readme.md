@@ -6,41 +6,41 @@ FastAPI 프레임워크를 사용하여 sentence-klue-roberta-base 모델을 서
 
 1. Repository clone
     
-    `git clone https://github.com/seawavve/STS_serving
+    ```git clone https://github.com/seawavve/STS_serving
     cd STS_serving
-    unzip training_sts-Huffon-sentence-klue-roberta-base-2022-03-16_16-35-50.zip`
+    unzip training_sts-Huffon-sentence-klue-roberta-base-2022-03-16_16-35-50.zip```
     
 
 본 Repository를 clone하여 로컬에 생성합니다. 폴더에 들어가 모델 파일 압축을 해제하여 사용할 모델을 세팅합니다.
 
-1. 환경 생성
+2. 환경 생성
     
-    `conda create -n sts-serving python=3.8
+    ```conda create -n sts-serving python=3.8
     conda activate sts-serving
     conda install --file requirements.txt
-    conda install -c powerai sentencepiece`
+    conda install -c powerai sentencepiece```
     
 
 conda로 가상환경을 설정합니다. requirements.txt 파일을 읽어 sts-serving conda 환경을 설정합니다.위 방식이 실행되지 않는다면 아래 코드를 실행해주세요.
 
-`pip install -r requirements.text`
+```pip install -r requirements.text```
 
 or
 
-`pip3 install -r requirements.text`
+```pip3 install -r requirements.text```
 
-1. Server Code
+3. Server Code
     
-    `uvicorn main:app --reload`
+    ```uvicorn main:app --reload```
     
 
 FastAPI Code를 실행합니다.
 
-1. URL 접속 `http://127.0.0.1:8000/docs#/` URL 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.
+4. URL 접속 `http://127.0.0.1:8000/docs#/` URL 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.
     
     ![https://user-images.githubusercontent.com/66352658/159536641-63cd6e61-4b0c-4766-a8b3-cfbba6ec654a.png](https://user-images.githubusercontent.com/66352658/159536641-63cd6e61-4b0c-4766-a8b3-cfbba6ec654a.png)
     
-2. Usage
+5. Usage
 - predict_sentences (/pred/sentences/)Try it Out -> "sentence_1": "string"의 "string"에 한국어 문장1 삽입 & "sentence_2": "string"의 "string"에 한국어 문장2 삽입 -> Execute결과는 Response Body에서 확인할 수 있습니다.
     
     ![https://user-images.githubusercontent.com/66352658/159537841-89fbbb9d-be7e-405d-afa6-a80baf649ab7.png](https://user-images.githubusercontent.com/66352658/159537841-89fbbb9d-be7e-405d-afa6-a80baf649ab7.png)
