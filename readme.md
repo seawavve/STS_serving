@@ -53,11 +53,15 @@ FastAPI 프레임워크를 사용하여 sentence-klue-roberta-base 모델을 서
     
     ![https://user-images.githubusercontent.com/66352658/159537841-89fbbb9d-be7e-405d-afa6-a80baf649ab7.png](https://user-images.githubusercontent.com/66352658/159537841-89fbbb9d-be7e-405d-afa6-a80baf649ab7.png)
     
-- predict_json_multiprocessing (/pred/file/)Try it Out -> sample_data.json 삽입 -> Execute결과는 Response Body에서 확인할 수 있습니다.
+- predict_json_multiprocessing (/pred/file/)  
+  Try it Out -> sample_data.json 삽입 -> Execute  
+  결과는 Response Body에서 확인할 수 있습니다.  
     
     ![https://user-images.githubusercontent.com/66352658/159538459-5116948b-8c2e-4f51-97bf-26c5a39bb193.png](https://user-images.githubusercontent.com/66352658/159538459-5116948b-8c2e-4f51-97bf-26c5a39bb193.png)
     
-- predict_json (/pred/multi/)Try it Out -> sample_data.json 삽입 -> Execute결과는 Response Body에서 확인할 수 있습니다.
+- predict_json (/pred/multi/)  
+  Try it Out -> sample_data.json 삽입 -> Execute  
+  결과는 Response Body에서 확인할 수 있습니다.  
     
     ![https://user-images.githubusercontent.com/66352658/159538640-534d0597-f2a3-449b-8c54-63485e2a7bc4.png](https://user-images.githubusercontent.com/66352658/159538640-534d0597-f2a3-449b-8c54-63485e2a7bc4.png)
     
