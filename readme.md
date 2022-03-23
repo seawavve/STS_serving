@@ -44,7 +44,8 @@ FastAPI 프레임워크를 사용하여 sentence-klue-roberta-base 모델을 서
 
 
 
-4. URL 접속 `http://127.0.0.1:8000/docs#/` URL 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.
+4. URL 접속
+   `http://127.0.0.1:8000/docs#/` URL 로 Swagger UI에 접속해 세 가지 모듈 중에 원하는 기능을 실행합니다. 기본 기능은 predict_sentences입니다.
     
     ![https://user-images.githubusercontent.com/66352658/159536641-63cd6e61-4b0c-4766-a8b3-cfbba6ec654a.png](https://user-images.githubusercontent.com/66352658/159536641-63cd6e61-4b0c-4766-a8b3-cfbba6ec654a.png)
     
