@@ -50,7 +50,9 @@ FastAPI 프레임워크를 사용하여 sentence-klue-roberta-base 모델을 서
     ![https://user-images.githubusercontent.com/66352658/159536641-63cd6e61-4b0c-4766-a8b3-cfbba6ec654a.png](https://user-images.githubusercontent.com/66352658/159536641-63cd6e61-4b0c-4766-a8b3-cfbba6ec654a.png)
     
 5. Usage
-- predict_sentences (/pred/sentences/)Try it Out -> "sentence_1": "string"의 "string"에 한국어 문장1 삽입 & "sentence_2": "string"의 "string"에 한국어 문장2 삽입 -> Execute결과는 Response Body에서 확인할 수 있습니다.
+- predict_sentences (/pred/sentences/)  
+Try it Out -> "sentence_1": "string"의 "string"에 한국어 문장1 삽입 & "sentence_2": "string"의 "string"에 한국어 문장2 삽입 -> Execute  
+결과는 Response Body에서 확인할 수 있습니다.
     
     ![https://user-images.githubusercontent.com/66352658/159537841-89fbbb9d-be7e-405d-afa6-a80baf649ab7.png](https://user-images.githubusercontent.com/66352658/159537841-89fbbb9d-be7e-405d-afa6-a80baf649ab7.png)
     
