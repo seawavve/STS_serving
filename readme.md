@@ -25,17 +25,17 @@ FastAPI 프레임워크를 사용하여 sentence-klue-roberta-base 모델을 서
     ```
     
 
-conda로 가상환경을 설정합니다. requirements.txt 파일을 읽어 sts-serving conda 환경을 설정합니다.위 방식이 실행되지 않는다면 아래 코드를 실행해주세요.
+    conda로 가상환경을 설정합니다. requirements.txt 파일을 읽어 sts-serving conda 환경을 설정합니다.위 방식이 실행되지 않는다면 아래 코드를 실행해주세요.
 
-```
-pip install -r requirements.text
-```
+    ```
+    pip install -r requirements.text
+    ```
 
-or
+    or
 
-```
-pip3 install -r requirements.text
-```
+    ```
+    pip3 install -r requirements.text
+    ```
 
 3. Server Code
     
